@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkchat_work"]=self["webpackChunkchat_work"]||[]).push([[443],{4335:function(n,t,a){a.r(t),a.d(t,{default:function(){return f}});var r=a(3396);const u={class:"about"},c=(0,r._)("h1",null,"This is an about page",-1),e=[c];function s(n,t){return(0,r.wg)(),(0,r.iD)("div",u,e)}var o=a(89);const i={},h=(0,o.Z)(i,[["render",s]]);var f=h}}]);
-//# sourceMappingURL=about.4e270cd2.js.map

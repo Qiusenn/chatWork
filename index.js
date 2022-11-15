@@ -2,7 +2,8 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const { init: initDB, Counter } = require("./db");
+const { init: initDB, Counter, User } = require("./db");
+const { stringify } = require("querystring");
 
 const logger = morgan("tiny");
 
@@ -35,10 +36,21 @@ app.post("/api/count", async (req, res) => {
 
 // 获取计数
 app.get("/api/count", async (req, res) => {
-  const result = await Counter.count();
+  
   res.send({
     code: 0,
     data: result,
+  });
+});
+
+// 注册用户
+app.get("/api/registered", async (req, res) => {
+  const { username, password } = req.query;
+  const user = await User.create({username: username, password: password});
+  console.log('用户已保存到数据库!');
+  res.send({
+    code: 0,
+    result: JSON.parse(JSON.stringify(user)),
   });
 });
 

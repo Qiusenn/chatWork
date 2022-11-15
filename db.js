@@ -34,13 +34,29 @@ const Counter = sequelize.define("Counter", {
   },
 });
 
+// 定义数据模型
+const User = sequelize.define("User", {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: "",
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: "",
+  },
+});
+
 // 数据库初始化方法
 async function init() {
   await Counter.sync({ alter: true });
+  await User.sync({ alter: true });
 }
 
 // 导出初始化方法和模型
 module.exports = {
   init,
   Counter,
+  User,
 };

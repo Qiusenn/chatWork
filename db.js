@@ -19,7 +19,7 @@ console.log(11);
 console.log(MYSQL_USERNAME);
 const [host, port] = MYSQL_ADDRESS.split(":");
 
-const sequelize = new Sequelize("test", MYSQL_USERNAME, MYSQL_PASSWORD, {
+const sequelize = new Sequelize("nodejs_demo", MYSQL_USERNAME, MYSQL_PASSWORD, {
   host,
   port,
   dialect: "mysql" /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
